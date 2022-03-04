@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ninjazz - an experiment to showcase WebAssembly, WebGL and WebXR</title>
+    <meta name="description"
+        content="Ninjazz party was created as an entertaining demonstration of WebAssembly. It uses WebGL and WebXR for visualization.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            z-index: -1;
+        }
+
+        #scene {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+        }
+
+        .hidden {
+            visibility: hidden;
+            opacity: 0%;
+            transition: visibility 0s 2s, opacity 2s linear;
+        }
+
+        .shown {
+            visibility: visible;
+            opacity: 100%;
+            transition: opacity 2s linear;
+        }
+
+        #loadscreen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1000;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #loadscreen #contents {
+            text-align: center;
+            transition: 1s linear;
+        }
+
+        #contents button {
+            border: 0px solid;
+            background-color: hsl(32, 100%, 40%);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 50px;
+            padding: 10px 20px;
+            position: relative;
+            transition: all 1s linear;
+        }
+
+        #contents button:hover {
+            background-color: hsl(32, 100%, 50%);
+            color: #ffffff;
+            transition: none;
+        }
+
+        #contents button:disabled,
+        #contents button[disabled] {
+            background-color: #cccccc;
+            color: #666666;
+        }
+
+        #contents #progress {
+            color: #cccccc;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+            transition: all 0.5s linear;
+        }
+
+        #overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 999;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            font-family: sans-serif;
+            font-size: smaller;
+            color: lightgray;
+        }
+
+        #overlay div {
+            margin-top: 3px;
+            margin-right: 3px;
+        }
+
+        #overlay a {
+            color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+    <div id="loadscreen">
+        <div id="contents">
+            <div><button disabled id="button">Enter</button></div>
+            <div id="progress">progress</div>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="copyright">
+            Copyright 2022 <a href="https://www.linkedin.com/in/jonas-hagmar-6775394/">Jonas Hagmar</a>
+        </div>
+        <div id="repo">
+            <a href="https://github.com/jhagmar/ninjazz">git repo</a>
+        </div>
+    </div>
+    <div id="scene" class="hidden"></div>
+</body>
+
+</html>

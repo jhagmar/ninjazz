@@ -1,6 +1,6 @@
 # Ninjazz
 
-Ninjazz was developed as an entertaining demonstration of the capabilities of WebAssembly, WebGL and WebXR for a presentation. The demo is available [here](https://ninjazz.eastconst.eu). It is certainly not the prettiest code around, but that was not the purpose. It did its job of getting the attention of my audience :).
+Ninjazz was developed as an entertaining demonstration of the capabilities of WebAssembly, WebGL and WebXR for a presentation. The demo is available [here](https://ninjazz.aztex.eu). It is certainly not the prettiest code around, but that was not the purpose. It did its job of getting the attention of my audience :).
 
 ## Navigation
 
